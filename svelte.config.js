@@ -14,15 +14,10 @@ const config = {
 			precompress: false,
 			strict: true
 		}),
-        
-        // SE o seu repositório NÃO for "seu-usuario.github.io" (raiz),
-        // e for algo como "github.com/fabricom/site-windows",
-        // você precisa descomentar e ajustar as linhas abaixo:
-        /*
         paths: {
-            base: process.env.NODE_ENV === 'production' ? '/nome-do-repositorio' : '',
+            base: process.env.NODE_ENV === 'production' ? '/fabricom-systems' : '',
         }
-        */
+        
 	}
 };
 
