@@ -4,6 +4,9 @@
 	import '$lib/style/global.css'
 
 	let { children } = $props();
+
+	export const prerender = true;
+	export const trailingSlash = 'always';
 </script>
 
 <svelte:head>
