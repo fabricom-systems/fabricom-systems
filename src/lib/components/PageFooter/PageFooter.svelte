@@ -1,6 +1,9 @@
+<script>
+	const date = (new Date()).getFullYear();
+</script>
+
 <footer class="footer-frame">
-    Copyright &copy; 1998 Fabricom Systems. All rights reserved.<br />
-    Optimized for Netscape Navigator 4.0 at 800x600 resolution.
+    Copyright &copy; {date} Fabricom Systems. All rights reserved.<br />
 </footer>
 
 <style>
