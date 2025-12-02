@@ -1,6 +1,44 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
 body {
-    background-image: url("/images/bg_clouds.jpeg");
-    background-size: contain;
-    height: 100vh;
+    background-color: #0a4823;
     margin: 0;
+    padding: 0;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+main a { color: blue; }
+main a:visited { color: purple; }
+main a:hover { background-color: yellow; }
+
+h1, h2, h3 {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #000080; /* Azul escuro corporativo */
+    border-bottom: 2px solid #808080;
+}
+
+input, textarea, select {
+    background-color: #fff;
+    border: 2px inset #d4d0c8;
+    font-family: 'Courier New', monospace;
+}
+
+button {
+    background-color: #d4d0c8;
+    border-top: 2px solid #fff;
+    border-left: 2px solid #fff;
+    border-right: 2px solid #404040;
+    border-bottom: 2px solid #404040;
+    padding: 2px 8px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:active {
+    border-top: 2px solid #404040;
+    border-left: 2px solid #404040;
+    border-right: 2px solid #fff;
+    border-bottom: 2px solid #fff;
 }
