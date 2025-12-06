@@ -1,12 +1,15 @@
-import adapter from '@sveltejs/adapter-static'; // <--- Mude para static
+import adapter from '@sveltejs/adapter-static';
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
+import { mdsvex } from 'mdsvex'
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
-	preprocess: vitePreprocess(),
-
+	extensions: ['.svelte', '.md'],
+	preprocess: [
+		vitePreprocess(),
+		mdsvex({ extensions: ['.md'] })
+	],
 	kit: {
-		// fallback: '404.html' garante que rotas dinâmicas não quebrem no refresh
 		adapter: adapter({
 			pages: 'build',
 			assets: 'build',

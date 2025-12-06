@@ -1,5 +1,5 @@
 <header class="header-frame">
-    <img alt="Fabricom Header" src="images/fabricom_header.jpg"/>
+    <img alt="Fabricom Header" src="/images/fabricom_header.jpg"/>
 </header>
 
 <style>

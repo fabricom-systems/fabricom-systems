@@ -6,3 +6,7 @@
 bun install
 bun run dev
 ```
+
+## TODO:
+
+[ ] Add blog page listing
