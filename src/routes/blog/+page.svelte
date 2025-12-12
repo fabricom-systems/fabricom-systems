@@ -55,22 +55,21 @@
 <h1>Blog Posts</h1>
 
 <div class="container">
+    
+    <div class="pagination">
+        <div class="pagination-buttons">
+            
+            <button onclick={previousPage} disabled={currentPage == 1}> &lt; </button>
+            
+            <span>{currentPage} / {totalPages}</span>
+            <button onclick={nextPage} disabled={currentPage === totalPages}> &gt; </button>
+        </div>
+    </div>
     <ul class="posts">
         {#each posts as post}
             {@render postItem(post)}
         {/each}
     </ul>
-    <div class="pagination">
-        <div class="pagination-buttons">
-            {#if currentPage > 1}
-                <button onclick={previousPage}> &lt; </button>
-            {/if}
-            <span>{currentPage} / {totalPages}</span>
-            {#if currentPage < totalPages}
-                <button onclick={nextPage}> &gt; </button>
-            {/if}
-        </div>
-    </div>
 </div>
 
 {#snippet postItem(post: PostMetadata)}
@@ -86,6 +85,7 @@
         width: 100%;
         display: flex;
         flex-direction: column;
+        height: auto;
     }
 
     .posts {
@@ -108,7 +108,7 @@
         width: 100%;
         display: flex;
         align-items: center;
-        justify-content: center;
+        justify-content: right;
     }
 
     .pagination-buttons {

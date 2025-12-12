@@ -9,4 +9,8 @@ bun run dev
 
 ## TODO:
 
-[ ] Add blog page listing
+[X] Add blog page listing
+[X] Better pagination layout
+[ ] Add back button on posts
+[ ] Add blog section to navigation menu
+[ ] Make sure long posts scrolls
