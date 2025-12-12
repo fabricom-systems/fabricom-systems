@@ -15,5 +15,6 @@ bun run dev
 [X] Add blog section to navigation menu
 [X] Make sure long posts scrolls
 [X] Order by publication date desc
-[ ] Pre-commit to check for unique post slug & id
+[X] Pre-commit to check for unique post slug & id
+[ ] Refactor types for different file
 [ ] Delete test posts
