@@ -1,5 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
+import { spawnSync } from 'bun';
 
 const FRONTMATTER_REGEX = /^---\s*([\s\S]*?)\s*---/;
 const POSTS_DIR = path.resolve(process.cwd(), 'src/posts');
@@ -7,6 +8,20 @@ const POSTS_DIR = path.resolve(process.cwd(), 'src/posts');
 interface PostMetadata {
   id?: string;
   title?: string;
+}
+
+function getStagedMarkdownFiles() {
+  // Roda: git diff --cached --name-only
+  const { stdout } = spawnSync(['git', 'diff', '--cached', '--name-only']);
+  const output = stdout.toString();
+  
+  // Filtra apenas arquivos que estão na pasta de posts e são .md
+  const stagedFiles = output
+    .split('\n')
+    .map((line: string) => line.trim())
+    .filter((line: string) => line.includes('src/posts') && line.endsWith('.md'));
+
+  return stagedFiles;
 }
 
 function parseFrontmatter(content: string): PostMetadata {
@@ -27,6 +42,13 @@ function parseFrontmatter(content: string): PostMetadata {
 }
 
 function validate() {
+  const stagedPosts = getStagedMarkdownFiles();
+
+  if (stagedPosts.length === 0) {
+    console.log('⏩ No posts changed. Skipping.');
+    process.exit(0);
+  }
+
   if (!fs.existsSync(POSTS_DIR)) {
     console.error(`❌ Posts directory not found: ${POSTS_DIR}`);
     process.exit(1);
