@@ -56,14 +56,14 @@
 
 <div class="container">
     
-    <div class="pagination">
+    <div class="toolbar">
+        {#if totalPages > 1}
         <div class="pagination-buttons">
-            
             <button onclick={previousPage} disabled={currentPage == 1}> &lt; </button>
-            
             <span>{currentPage} / {totalPages}</span>
             <button onclick={nextPage} disabled={currentPage === totalPages}> &gt; </button>
         </div>
+        {/if}
     </div>
     <ul class="posts">
         {#each posts as post}
@@ -104,7 +104,7 @@
         font-size: 14px;
     }
 
-    .pagination {
+    .toolbar {
         width: 100%;
         display: flex;
         align-items: center;
