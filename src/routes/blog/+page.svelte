@@ -17,8 +17,8 @@
     const totalPosts = Object.entries(paths).map(([path, file]) => {
         const slug = path.split('/').pop()?.replace('.md', '');
         return {
-            slug,
-            ...(file as PostFile).metadata
+            ...(file as PostFile).metadata,
+            slug: slug ?? ""
         }
     });
 
