@@ -1,17 +1,7 @@
 <script lang="ts">
 	import path from "path";
-
-    type PostMetadata = {
-        title: string,
-        date: string,
-        id: number,
-        slug: string
-    }
-
-    type PostFile = {
-        metadata: PostMetadata
-    }
-
+    import type { PostMetadata, PostFile } from '$lib/types'
+    
     const paths = import.meta.glob("/src/posts/*.md", {eager: true});
 
     const totalPosts = Object.entries(paths).map(([path, file]) => {

@@ -16,5 +16,6 @@ bun run dev
 [X] Make sure long posts scrolls
 [X] Order by publication date desc
 [X] Pre-commit to check for unique post slug & id
-[ ] Refactor types for different file
+[X] Refactor types for different file
+[ ] Create script to generate new post with metadata
 [ ] Delete test posts

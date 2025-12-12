@@ -1,14 +1,10 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { spawnSync } from 'bun';
+import { PostMetadata } from '../src/lib/types'
 
 const FRONTMATTER_REGEX = /^---\s*([\s\S]*?)\s*---/;
 const POSTS_DIR = path.resolve(process.cwd(), 'src/posts');
-
-interface PostMetadata {
-  id?: string;
-  title?: string;
-}
 
 function getStagedMarkdownFiles() {
   // Roda: git diff --cached --name-only
@@ -24,9 +20,9 @@ function getStagedMarkdownFiles() {
   return stagedFiles;
 }
 
-function parseFrontmatter(content: string): PostMetadata {
+function parseFrontmatter(content: string): PostMetadata | null {
   const match = content.match(FRONTMATTER_REGEX);
-  if (!match) return {};
+  if (!match) return null;
 
   const rawMeta = match[1];
   const meta: any = {};
@@ -56,7 +52,7 @@ function validate() {
 
   const files = fs.readdirSync(POSTS_DIR).filter(f => f.endsWith('.md'));
   
-  const seenIds = new Map<string, string>();
+  const seenIds = new Map<number, string>();
   let hasError = false;
 
   console.log(`🔍 Checking ${files.length} posts...`);
@@ -65,6 +61,11 @@ function validate() {
     const filePath = path.join(POSTS_DIR, file);
     const content = fs.readFileSync(filePath, 'utf-8');
     const meta = parseFrontmatter(content);
+
+    if (!meta) {
+      console.error(`❌ ERROR: Malformed metadata found in: '${file}':`);
+      process.exit(1);
+    }
 
     if (meta.id) {
       if (seenIds.has(meta.id)) {
