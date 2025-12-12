@@ -13,5 +13,7 @@ bun run dev
 [X] Better pagination layout
 [X] Add back button on posts
 [X] Add blog section to navigation menu
-[ ] Make sure long posts scrolls
+[X] Make sure long posts scrolls
+[X] Order by publication date desc
 [ ] Pre-commit to check for unique post slug & id
+[ ] Delete test posts
