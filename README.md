@@ -7,6 +7,12 @@ bun install
 bun run dev
 ```
 
+## Scripts
+
+```
+bun run new-post -> Creates a new blog post
+```
+
 ## TODO:
 
 [X] Add blog page listing
@@ -17,5 +23,6 @@ bun run dev
 [X] Order by publication date desc
 [X] Pre-commit to check for unique post slug & id
 [X] Refactor types for different file
-[ ] Create script to generate new post with metadata
+[X] Create script to generate new post with metadata
+[ ] Order posts by ID desc
 [ ] Delete test posts
