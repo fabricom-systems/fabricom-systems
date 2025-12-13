@@ -55,8 +55,6 @@ async function createPost() {
         `date: "${date}"`,
         '---',
         '',
-        `# ${title}`,
-        '',
         '> [YOUR POST HERE]'
     ]
 
