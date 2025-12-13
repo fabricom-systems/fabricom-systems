@@ -3,6 +3,7 @@
 
 	const home = resolve(`/`);
 	const about = resolve('/about');
+	const blog = resolve('/blog')
 </script>
 
 <navbar>
@@ -11,7 +12,7 @@
     <nav>
         <a href={home}>Home</a>
         <a href={home}>Products</a>
-        <a href={home}>Services</a>
+        <a href={blog}>Blog</a>
         <a href={about}>About Us</a>
         <a href={home}>Contact</a>
     </nav>
