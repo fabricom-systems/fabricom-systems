@@ -11,10 +11,8 @@
     <hr />
     <nav>
         <a href={home}>Home</a>
-        <a href={home}>Products</a>
         <a href={blog}>Blog</a>
         <a href={about}>About Us</a>
-        <a href={home}>Contact</a>
     </nav>
     <hr />
     <div class="sidebar-box">
