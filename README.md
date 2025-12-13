@@ -24,5 +24,5 @@ bun run new-post -> Creates a new blog post
 [X] Pre-commit to check for unique post slug & id
 [X] Refactor types for different file
 [X] Create script to generate new post with metadata
-[ ] Order posts by ID desc
+[X] Order posts by ID desc
 [ ] Delete test posts

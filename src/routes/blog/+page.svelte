@@ -10,7 +10,7 @@
             ...(file as PostFile).metadata,
             slug: slug ?? ""
         }
-    }).sort((a, b) => new Date(b.date).getDate() - new Date(a.date).getDate());
+    }).sort((a, b) => b.id - a.id);
 
     const itemsPerPage = 10;
     let currentPage = $state(1);
