@@ -1,5 +1,8 @@
+<script>
+	import headerImg from '$lib/assets/images/fabricom_header.jpg'
+</script>
 <header class="header-frame">
-    <img alt="Fabricom Header" src="/images/fabricom_header.jpg"/>
+    <img alt="Fabricom Header" src={headerImg}/>
 </header>
 
 <style>
